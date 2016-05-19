@@ -1,0 +1,9 @@
+name: AntiEggOnSpawner
+main: to.px.marbow.AntiEggOnSpawner.AEOS
+version: 1.9.2
+commands:
+  aeos:
+    description: 'こっこっこっこっこけっこー♪'
+    usage: '/<command> ヘルプを表示します'
+    permission: antieggonspawner.aeos
+    permission-message: '<permission>を実行する権限がありません'
