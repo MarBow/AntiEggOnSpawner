@@ -30,27 +30,18 @@ public class AEOS extends JavaPlugin implements Listener {
 
 		getLogger().info("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 
-		getLogger().info(
-				"AntiEggOnSpawnerは"
-						+ (AEOS.flgAEOSEnabled ? ChatColor.GREEN + "有効"
-								: ChatColor.RED + "無効") + ChatColor.RESET
-						+ "です。");
+		getLogger().info("AntiEggOnSpawnerは" + (AEOS.flgAEOSEnabled ? ChatColor.GREEN + "有効" : ChatColor.RED + "無効")
+				+ ChatColor.RESET + "です。");
 
-		getLogger().info(
-				"Egg取り上げは"
-						+ (AEOS.flgDisqualify ? ChatColor.GREEN + "有効"
-								: ChatColor.RED + "無効") + ChatColor.RESET
-						+ "です。");
+		getLogger().info("Egg取り上げは" + (AEOS.flgDisqualify ? ChatColor.GREEN + "有効" : ChatColor.RED + "無効")
+				+ ChatColor.RESET + "です。");
 
-		getLogger().info(
-				"ネザーでのベット使用は"
-						+ (AEOS.flgNoBedOnNether ? ChatColor.GREEN + "禁止"
-								: ChatColor.RED + "許可") + ChatColor.RESET
-						+ "です。");
+		getLogger().info("ネザーでのベット使用は" + (AEOS.flgNoBedOnNether ? ChatColor.GREEN + "禁止" : ChatColor.RED + "許可")
+				+ ChatColor.RESET + "です。");
 
 		getLogger().info("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 
-		//getCommand("aeos").setExecutor(new SwitchCommand());
+		// getCommand("aeos").setExecutor(new SwitchCommand());
 		getServer().getPluginManager().registerEvents(this, this);
 	}
 
@@ -69,23 +60,14 @@ public class AEOS extends JavaPlugin implements Listener {
 
 		getLogger().info("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 
-		getLogger().info(
-				"AntiEggOnSpawnerは"
-						+ (AEOS.flgAEOSEnabled ? ChatColor.GREEN + "有効"
-								: ChatColor.RED + "無効") + ChatColor.RESET
-						+ "でした。");
+		getLogger().info("AntiEggOnSpawnerは" + (AEOS.flgAEOSEnabled ? ChatColor.GREEN + "有効" : ChatColor.RED + "無効")
+				+ ChatColor.RESET + "でした。");
 
-		getLogger().info(
-				"Egg取り上げは"
-						+ (AEOS.flgDisqualify ? ChatColor.GREEN + "有効"
-								: ChatColor.RED + "無効") + ChatColor.RESET
-						+ "でした。");
+		getLogger().info("Egg取り上げは" + (AEOS.flgDisqualify ? ChatColor.GREEN + "有効" : ChatColor.RED + "無効")
+				+ ChatColor.RESET + "でした。");
 
-		getLogger().info(
-				"ネザーでのベット使用は"
-						+ (AEOS.flgNoBedOnNether ? ChatColor.GREEN + "禁止"
-								: ChatColor.RED + "許可") + ChatColor.RESET
-						+ "でした。");
+		getLogger().info("ネザーでのベット使用は" + (AEOS.flgNoBedOnNether ? ChatColor.GREEN + "禁止" : ChatColor.RED + "許可")
+				+ ChatColor.RESET + "でした。");
 
 		getLogger().info("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 	}
@@ -98,8 +80,7 @@ public class AEOS extends JavaPlugin implements Listener {
 
 	// ==========================================================
 
-	public boolean onCommand(CommandSender sender, Command cmd,
-			String commandLabel, String[] args) {
+	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
 		boolean flgRef = true;
 
 		// if ((sender instanceof Player)) {
@@ -109,25 +90,22 @@ public class AEOS extends JavaPlugin implements Listener {
 
 			if (args.length > 0) {
 				Player other = (Player) sender;
-				//Player other = getPlayer(args[0]);
+				// Player other = getPlayer(args[0]);
 
 				if (other != null) {
 
-					//sender.sendMessage("r u "+other.getName()+" ?");
+					// sender.sendMessage("r u "+other.getName()+" ?");
 
 					switch (args[0].toLowerCase()) {
 
 					case "on":
 						AEOS.flgAEOSEnabled = true;
-						sender.sendMessage("AntiEggOnSpawnerは"
-								+ ChatColor.GREEN + "有効" + ChatColor.RESET
-								+ "になりました。");
+						sender.sendMessage("AntiEggOnSpawnerは" + ChatColor.GREEN + "有効" + ChatColor.RESET + "になりました。");
 						break;
 
 					case "off":
 						AEOS.flgAEOSEnabled = false;
-						sender.sendMessage("AntiEggOnSpawnerは" + ChatColor.RED
-								+ "無効" + ChatColor.RESET + "になりました。");
+						sender.sendMessage("AntiEggOnSpawnerは" + ChatColor.RED + "無効" + ChatColor.RESET + "になりました。");
 						break;
 
 					case "disqualify":// スポナーにエッグを使った時の取り上げ
@@ -135,13 +113,11 @@ public class AEOS extends JavaPlugin implements Listener {
 							switch (args[1].toLowerCase()) {
 							case "on":
 								AEOS.flgDisqualify = true;
-								sender.sendMessage("Egg取り上げは" + ChatColor.GREEN
-										+ "有効" + ChatColor.RESET + "になりました。");
+								sender.sendMessage("Egg取り上げは" + ChatColor.GREEN + "有効" + ChatColor.RESET + "になりました。");
 								break;
 							case "off":
 								AEOS.flgDisqualify = false;
-								sender.sendMessage("Egg取り上げは" + ChatColor.RED
-										+ "無効" + ChatColor.RESET + "になりました。");
+								sender.sendMessage("Egg取り上げは" + ChatColor.RED + "無効" + ChatColor.RESET + "になりました。");
 								break;
 							default:
 								sender.sendMessage("/aeos disqualify [on|off] 使おうとしたエッグ取り上げの有効・無効を切り替えます。");
@@ -157,15 +133,12 @@ public class AEOS extends JavaPlugin implements Listener {
 							switch (args[1].toLowerCase()) {
 							case "on":
 								AEOS.flgNoBedOnNether = true;
-								sender.sendMessage("ネザーでのベッド使用は"
-										+ ChatColor.GREEN + "禁止"
-										+ ChatColor.RESET + "になりました。");
+								sender.sendMessage(
+										"ネザーでのベッド使用は" + ChatColor.GREEN + "禁止" + ChatColor.RESET + "になりました。");
 								break;
 							case "off":
 								AEOS.flgNoBedOnNether = false;
-								sender.sendMessage("ネザーでのベッド使用は"
-										+ ChatColor.RED + "許可"
-										+ ChatColor.RESET + "になりました。");
+								sender.sendMessage("ネザーでのベッド使用は" + ChatColor.RED + "許可" + ChatColor.RESET + "になりました。");
 								break;
 							default:
 								sender.sendMessage("/aeos nbon [on|off] ネザーでのベッド使用の禁止・許可を切り替えます。");
@@ -179,46 +152,37 @@ public class AEOS extends JavaPlugin implements Listener {
 					case "pmsn":
 						if ((sender instanceof Player)) {
 							Player playerCmd = (Player) sender;
-							Set<PermissionAttachmentInfo> setPai = playerCmd
-									.getEffectivePermissions();
+							Set<PermissionAttachmentInfo> setPai = playerCmd.getEffectivePermissions();
 							PermissionAttachmentInfo[] pais = setPai
-									.toArray(new PermissionAttachmentInfo[setPai
-											.size()]);
+									.toArray(new PermissionAttachmentInfo[setPai.size()]);
 							sender.sendMessage("パーミッション数は");
 							sender.sendMessage(String.valueOf(pais.length));
 							for (int i = 0; i < pais.length; i++) {
 								sender.sendMessage(pais[i].getPermission());
 							}
-						}
-						else{
+						} else {
 							flgRef = false;
 						}
 
 						break;
 					}
 
-				}
-				else
-				{
+				} else {
 					flgRef = false;
 				}
 			} else {
 
 				sender.sendMessage("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
-				sender.sendMessage("AntiEggOnSpawnerは"
-						+ (AEOS.flgAEOSEnabled ? ChatColor.GREEN + "有効"
-								: ChatColor.RED + "無効") + ChatColor.RESET
-						+ "です。");
+				sender.sendMessage(
+						"AntiEggOnSpawnerは" + (AEOS.flgAEOSEnabled ? ChatColor.GREEN + "有効" : ChatColor.RED + "無効")
+								+ ChatColor.RESET + "です。");
 
-				sender.sendMessage("Egg取り上げは"
-						+ (AEOS.flgDisqualify ? ChatColor.GREEN + "有効"
-								: ChatColor.RED + "無効") + ChatColor.RESET
-						+ "です。");
+				sender.sendMessage("Egg取り上げは" + (AEOS.flgDisqualify ? ChatColor.GREEN + "有効" : ChatColor.RED + "無効")
+						+ ChatColor.RESET + "です。");
 
-				sender.sendMessage("ネザーでのベット使用は"
-						+ (AEOS.flgNoBedOnNether ? ChatColor.GREEN + "禁止"
-								: ChatColor.RED + "許可") + ChatColor.RESET
-						+ "です。");
+				sender.sendMessage(
+						"ネザーでのベット使用は" + (AEOS.flgNoBedOnNether ? ChatColor.GREEN + "禁止" : ChatColor.RED + "許可")
+								+ ChatColor.RESET + "です。");
 				sender.sendMessage("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 
 				sender.sendMessage("/aeos 使用法および現在の状態を表示します。");
@@ -227,16 +191,14 @@ public class AEOS extends JavaPlugin implements Listener {
 				sender.sendMessage("/aeos nbon [on|off] ネザーでのベッド使用の禁止・許可を切り替えます。");
 				// sender.sendMessage("/aeos [Player] プレイヤーに一時的な使用許可を与えます");
 			}
-		}
-		else
-		{
+		} else {
 			flgRef = false;
 		}
 
 		return flgRef;
 	}
 
-	// ==========================================================
+	// 〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓
 
 	public Player getPlayer(String name) {
 		for (Player player : Bukkit.getOnlinePlayers()) {
@@ -268,16 +230,12 @@ public class AEOS extends JavaPlugin implements Listener {
 							// スポナーに使おうとしたか検出
 							player.sendMessage("モンスターエッグをスポナーに使うことは許可されていません。");
 							event.setCancelled(true);
-							getLogger().info(
-									player.getName() + "が"
-											+ event.getItem().getType() + "を"
-											+ event.getClickedBlock().getType()
-											+ "に使おうとしました。");
+							getLogger().info(player.getName() + "が" + event.getItem().getType() + "を"
+									+ event.getClickedBlock().getType() + "に使おうとしました。");
 
 							if (flgDisqualify) {
 								// 使おうとしたエッグを取り上げる
-								PlayerInventory inventory = player
-										.getInventory();
+								PlayerInventory inventory = player.getInventory();
 								inventory.removeItem(player.getItemInHand());
 							}
 						}
@@ -291,11 +249,9 @@ public class AEOS extends JavaPlugin implements Listener {
 				Biome bm = player.getWorld().getBiome(0, 0);
 				if (bm == Biome.HELL) {
 					if (target.getType() == Material.BED_BLOCK) {
-						player.sendMessage(ChatColor.RED
-								+ "ネザーワールドでベッド使うと爆発するよ！！" + ChatColor.RESET);
+						player.sendMessage(ChatColor.RED + "ネザーワールドでベッド使うと爆発するよ！！" + ChatColor.RESET);
 						event.setCancelled(true);
-						getServer().getLogger().info(
-								player.getName() + "がネザーワールドでベッドを使用しようとしました。");
+						getServer().getLogger().info(player.getName() + "がネザーワールドでベッドを使用しようとしました。");
 					}
 				}
 			}
