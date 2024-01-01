@@ -1,3 +1,4 @@
 ﻿AEOSEnable: true
 Disqualify: true
 NoBedOnNether: true
+NoBedOnEnd: true
